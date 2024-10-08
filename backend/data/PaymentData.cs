@@ -7,16 +7,16 @@ namespace Data
     internal class PaymentData
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
-        public MemberData Member { get; set; }
+        public required MemberData Member { get; set; }
 
-        public EmployeeData Employee { get; set; }
+        public required EmployeeData Employee { get; set; }
 
-        public ScheduleData Schedule { get; set; }
+        public required ScheduleData Schedule { get; set; }
         
-        public decimal Value { get; set; }
+        public required decimal Value { get; set; }
 
-        public DateTime Date { get; set; }
+        public required DateTime Date { get; set; }
     }
 }

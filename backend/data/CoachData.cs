@@ -6,10 +6,10 @@ namespace Data
     [Table("tb_coach")]
     internal class CoachData : UserData
     {
-        public List<MemberData> Members { get; set; }
+        public required List<MemberData> Members { get; set; }
 
-        public ScheduleData Schedule { get; set; }
+        public required ScheduleData Schedule { get; set; }
 
-        public List<ProgressCheckData> ProgressChecks { get; set; }
+        public required List<ProgressCheckData> ProgressChecks { get; set; }
     }
 }

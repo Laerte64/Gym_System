@@ -7,14 +7,14 @@ namespace Data
     internal class ExerciseData
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
         [Required]
         [MaxLength(100)]
-        public string Equipment { get; set; }
+        public required string Equipment { get; set; }
     }
 }

@@ -86,6 +86,10 @@ namespace Data
                 .WithMany()
                 .IsRequired(); 
             modelBuilder.Entity<CheckInDayData>()
+                .HasOne(c => c.Employee)
+                .WithMany(e => e.CheckInDays)
+                .IsRequired();
+            modelBuilder.Entity<CheckInDayData>()
                 .HasOne(c => c.WorkoutDay)
                 .WithMany()
                 .IsRequired();

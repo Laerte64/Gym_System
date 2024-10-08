@@ -7,12 +7,12 @@ namespace Data
     internal class TimeSlotData
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
-        public DayOfWeek Day { get; set; }
+        public required DayOfWeek Day { get; set; }
 
-        public TimeSpan Start { get; set; }
+        public required TimeSpan Start { get; set; }
 
-        public TimeSpan End { get; set; }
+        public required TimeSpan End { get; set; }
     }
 }

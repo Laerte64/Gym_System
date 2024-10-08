@@ -6,18 +6,18 @@ namespace Data
     [Table("tb_member")]
     internal class MemberData : UserData
     {
-        public List<CoachData> Coaches { get; set; }
+        public required List<CoachData> Coaches { get; set; }
 
-        public List<PaymentData> Payments { get; set; }
+        public required List<PaymentData> Payments { get; set; }
 
-        public ScheduleData Schedule { get; set; }
+        public required ScheduleData Schedule { get; set; }
 
-        public List<CheckInDayData> CheckInDays { get; set; }
+        public required List<CheckInDayData> CheckInDays { get; set; }
 
-        public List<ProgressCheckData> ProgressChecks { get; set; }
+        public required List<ProgressCheckData> ProgressChecks { get; set; }
 
-        public int SplitId { get; set; }
-        public SplitData Split { get; set; }
-        public int DayOfSplit { get; set; }
+        public int SplitId { get; set; } = 0;
+        public required SplitData Split { get; set; }
+        public int DayOfSplit { get; set; } = 0;
     }
 }

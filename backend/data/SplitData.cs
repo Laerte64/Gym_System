@@ -7,14 +7,14 @@ namespace Data
     internal class SplitData
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
-        public List<WorkoutDayData> Days { get; set; }
+        public required List<WorkoutDayData> Days { get; set; }
 
-        public bool Standart { get; set; }
+        public required bool Standart { get; set; }
     }
 }

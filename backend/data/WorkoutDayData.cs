@@ -7,14 +7,14 @@ namespace Data
     internal class WorkoutDayData 
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
-        public List<ExerciseData> Exercises { get; set; }
+        public required List<ExerciseData> Exercises { get; set; }
 
-        public bool Standart { get; set; }
+        public required bool Standart { get; set; }
     }
 }

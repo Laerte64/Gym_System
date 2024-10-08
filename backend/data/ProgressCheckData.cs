@@ -7,18 +7,18 @@ namespace Data
     internal class ProgressCheckData
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
-        public MemberData Member { get; set; }
+        public required MemberData Member { get; set; }
 
-        public CoachData Coach { get; set; }
+        public required CoachData Coach { get; set; }
 
-        public DateTime Date { get; set; }
+        public required DateTime Date { get; set; }
 
-        public decimal Height { get; set; }
+        public required decimal Height { get; set; }
 
-        public decimal Mass { get; set; }
+        public required decimal Mass { get; set; }
 
-        public decimal Fat { get; set; }
+        public required decimal Fat { get; set; }
     }
 }

@@ -7,10 +7,14 @@ namespace Data
     internal class CheckInDayData
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
-        public MemberData Member { get; set; }
+        public required MemberData Member { get; set; }
 
-        public WorkoutDayData WorkoutDay { get; set; }
+        public required EmployeeData Employee { get; set; }
+
+        public required WorkoutDayData WorkoutDay { get; set; }
+
+        public required DateTime Date { get; set; }
     }
 }

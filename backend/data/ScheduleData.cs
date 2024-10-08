@@ -7,14 +7,14 @@ namespace Data
     internal class ScheduleData
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
-        public List<TimeSlotData> TimeSlots { get; set; }
+        public required List<TimeSlotData> TimeSlots { get; set; }
 
-        public decimal MonthlyFee { get; set; }
+        public required decimal MonthlyFee { get; set; }
 
-        public List<MemberData> Members { get; set; }
+        public required List<MemberData> Members { get; set; }
 
-        public List<CoachData> Coaches { get; set; }
+        public required List<CoachData> Coaches { get; set; }
     }
 }

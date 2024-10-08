@@ -7,21 +7,21 @@ namespace Data
     internal class UserData
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
         [Required]
-        public DateTime BirthDate { get; set; }
+        public required DateTime BirthDate { get; set; }
 
         [Required]
         [MaxLength(50)]
-        public string Login { get; set; }
+        public required string Login { get; set; }
 
         [Required]
         [MaxLength(100)]
-        public string Password { get; set; }
+        public required string Password { get; set; }
     }
 }

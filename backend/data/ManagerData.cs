@@ -6,6 +6,6 @@ namespace Data
     [Table("tb_manager")]
     internal class ManagerData: UserData
     {
-        public List<TimeSlotData> WorkDays { get; set; }
+        public required List<TimeSlotData> WorkDays { get; set; }
     }
 }
