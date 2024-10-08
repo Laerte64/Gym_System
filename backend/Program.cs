@@ -1,14 +1,7 @@
 using Data;
 using Microsoft.EntityFrameworkCore;
 
-using Model;
-UserData AData = new UserData();
-AData.Id = 1;
-User A = new User(AData);
-UserData BData = new UserData();
-BData.Id = 2;
-User B = new User(BData);
-Console.WriteLine($"{A == B}");
+
 
 var builder = WebApplication.CreateBuilder(args);
 
