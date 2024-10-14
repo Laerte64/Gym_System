@@ -1,0 +1,223 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\controller\\coachcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:controller\\coachcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\controller\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:controller\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\controller\\exercisecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:controller\\exercisecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\controller\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:controller\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\controller\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:controller\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\controller\\progresscheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:controller\\progresscheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\controller\\splitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:controller\\splitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\controller\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:controller\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\controller\\workoutdaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:controller\\workoutdaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\model\\progresscheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:model\\progresscheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\model\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:model\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|c:\\users\\cayoc\\onedrive\\desktop\\utfpr\\gym_system\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46697D9E-69E7-42E1-9BFC-5B62A8522503}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProgressCheckController.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\ProgressCheckController.cs",
+              "RelativeDocumentMoniker": "Controller\\ProgressCheckController.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\ProgressCheckController.cs",
+              "RelativeToolTip": "Controller\\ProgressCheckController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:31:46.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Controller\\PaymentController.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\PaymentController.cs",
+              "RelativeToolTip": "Controller\\PaymentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:31:10.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MemberController.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\MemberController.cs",
+              "RelativeDocumentMoniker": "Controller\\MemberController.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\MemberController.cs",
+              "RelativeToolTip": "Controller\\MemberController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:30:50.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExerciseController.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\ExerciseController.cs",
+              "RelativeDocumentMoniker": "Controller\\ExerciseController.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\ExerciseController.cs",
+              "RelativeToolTip": "Controller\\ExerciseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:30:25.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "Controller\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\EmployeeController.cs",
+              "RelativeToolTip": "Controller\\EmployeeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:29:59.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CoachController.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\CoachController.cs",
+              "RelativeDocumentMoniker": "Controller\\CoachController.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\CoachController.cs",
+              "RelativeToolTip": "Controller\\CoachController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:26:59.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SplitController.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\SplitController.cs",
+              "RelativeDocumentMoniker": "Controller\\SplitController.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\SplitController.cs",
+              "RelativeToolTip": "Controller\\SplitController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:32:09.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\UserController.cs",
+              "RelativeDocumentMoniker": "Controller\\UserController.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\UserController.cs",
+              "RelativeToolTip": "Controller\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:09:28.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WorkoutDayController.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\WorkoutDayController.cs",
+              "RelativeDocumentMoniker": "Controller\\WorkoutDayController.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Controller\\WorkoutDayController.cs",
+              "RelativeToolTip": "Controller\\WorkoutDayController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:32:33.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProgressCheck.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Model\\ProgressCheck.cs",
+              "RelativeDocumentMoniker": "Model\\ProgressCheck.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Model\\ProgressCheck.cs",
+              "RelativeToolTip": "Model\\ProgressCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:31:26.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Member.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Model\\Member.cs",
+              "RelativeDocumentMoniker": "Model\\Member.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Model\\Member.cs",
+              "RelativeToolTip": "Model\\Member.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:30:31.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\cayoc\\OneDrive\\Desktop\\UTFPR\\Gym_System\\Backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T16:08:50.062Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
