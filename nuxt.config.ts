@@ -8,5 +8,6 @@ export default defineNuxtConfig({
   primevue: {
     /* Options */
 },
-css: ['primevue/resources/themes/aura-dark-lime/theme.css', 'primeflex/primeflex.css', 'primeicons/primeicons.css']
+css: ['primevue/resources/themes/aura-dark-noir/theme.css', 'primeflex/primeflex.css', 'primeicons/primeicons.css']
 })
+
