@@ -4,5 +4,4 @@ namespace Model;
 
 [Table("tb_coach")]
 internal class Coach : User
-{
-}
+{}
