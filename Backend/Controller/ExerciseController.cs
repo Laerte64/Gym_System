@@ -1,58 +1,66 @@
-﻿using Data;
-using Model;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿namespace Controller;
 
-namespace Controller;
+using Microsoft.AspNetCore.Mvc;
+using Model;
+using Repository;
+using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 [Route("api/exercise")]
 [ApiController]
-internal class ExerciseController : ControllerBase
+[Authorize]
+public class ExerciseController : ControllerBase
 {
-    private readonly GymContext _context;
-    public ExerciseController(GymContext context)
+    private readonly ExerciseRepository _exerciseRepository;
+
+    public ExerciseController(ExerciseRepository exerciseRepository)
     {
-        _context = context;
+        _exerciseRepository = exerciseRepository;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var users = await _context.Users.ToListAsync();
-        return Ok(users);
+        var exercises = await _exerciseRepository.GetAllAsync();
+        return Ok(exercises);
     }
 
-    [HttpGet("getById")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        return Ok(user);
+        var exercise = await _exerciseRepository.GetByIdAsync(id);
+        if (exercise == null)
+            return NotFound();
+        
+        return Ok(exercise);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(User user)
+    public async Task<IActionResult> Create(Exercise exercise)
     {
-        _context.Add(user);
-        await _context.SaveChangesAsync();
-        return Created("", user);
+        await _exerciseRepository.AddAsync(exercise);
+        return CreatedAtAction(nameof(GetById), new { id = exercise.Id }, exercise);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update(User user)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, Exercise exercise)
     {
-        _context.Entry(user).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-        return Ok(user);
+        if (id != exercise.Id)
+            return BadRequest("ID mismatch");
+
+        await _exerciseRepository.UpdateAsync(exercise);
+        return Ok(exercise);
     }
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        if (user == null)
-            return NoContent();
-        _context.Remove(user);
-        await _context.SaveChangesAsync();
-        return Ok();
+        var exercise = await _exerciseRepository.GetByIdAsync(id);
+        if (exercise == null)
+            return NotFound();
+
+        await _exerciseRepository.RemoveAsync(exercise);
+        return NoContent();
     }
 }

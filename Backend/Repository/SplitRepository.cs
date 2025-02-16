@@ -5,7 +5,7 @@ using Interface;
 using Microsoft.EntityFrameworkCore;
 using Model;
 
-class SplitRepository : IRepository<Split>
+public class SplitRepository : IRepository<Split>
 {
     private readonly GymContext _context;
 

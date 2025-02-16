@@ -1,58 +1,66 @@
-﻿using Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Model;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Repository;
+using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Controller;
 
 [Route("api/workoutday")]
 [ApiController]
-internal class WorkoutDayController : ControllerBase
+[Authorize]
+public class WorkoutDayController : ControllerBase
 {
-    private readonly GymContext _context;
-    public WorkoutDayController(GymContext context)
+    private readonly WorkoutDayRepository _workoutDayRepository;
+
+    public WorkoutDayController(WorkoutDayRepository workoutDayRepository)
     {
-        _context = context;
+        _workoutDayRepository = workoutDayRepository;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var users = await _context.Users.ToListAsync();
-        return Ok(users);
+        var workoutDays = await _workoutDayRepository.GetAllAsync();
+        return Ok(workoutDays);
     }
 
-    [HttpGet("getById")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        return Ok(user);
+        var workoutDay = await _workoutDayRepository.GetByIdAsync(id);
+        if (workoutDay == null)
+            return NotFound();
+        
+        return Ok(workoutDay);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(User user)
+    public async Task<IActionResult> Create(WorkoutDay workoutDay)
     {
-        _context.Add(user);
-        await _context.SaveChangesAsync();
-        return Created("", user);
+        await _workoutDayRepository.AddAsync(workoutDay);
+        return CreatedAtAction(nameof(GetById), new { id = workoutDay.Id }, workoutDay);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update(User user)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, WorkoutDay workoutDay)
     {
-        _context.Entry(user).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-        return Ok(user);
+        if (id != workoutDay.Id)
+            return BadRequest("ID mismatch");
+
+        await _workoutDayRepository.UpdateAsync(workoutDay);
+        return Ok(workoutDay);
     }
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        if (user == null)
-            return NoContent();
-        _context.Remove(user);
-        await _context.SaveChangesAsync();
-        return Ok();
+        var workoutDay = await _workoutDayRepository.GetByIdAsync(id);
+        if (workoutDay == null)
+            return NotFound();
+
+        await _workoutDayRepository.RemoveAsync(workoutDay);
+        return NoContent();
     }
 }

@@ -1,58 +1,37 @@
-using Data;
-using Model;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Model;
+using Repository;
+using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using Model.DTO;
+using Interface;
+using Services;
 
 namespace Controller;
 
 [Route("api/user")]
 [ApiController]
-internal class UserController : ControllerBase
+public class UserController : ControllerBase
 {
-    private readonly GymContext _context;
-    public UserController(GymContext context)
+    private readonly UserRepository _userRepository;
+    private readonly IJwtService _jwtService;
+
+    public UserController(UserRepository userRepository, IJwtService jwtService)
     {
-        _context = context;
+        _userRepository = userRepository;
+        _jwtService = jwtService;
     }
 
-    [HttpGet]
-    public async Task<IActionResult> GetAll()
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
-        var users = await _context.Users.ToListAsync();
-        return Ok(users);
-    }
-
-    [HttpGet("getById")]
-    public async Task<IActionResult> GetById(int id)
-    {
-        var user = await _context.Users.FindAsync(id);
-        return Ok(user);
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> Create(User user)
-    {
-        _context.Add(user);
-        await _context.SaveChangesAsync();
-        return Created("", user);
-    }
-
-    [HttpPut]
-    public async Task<IActionResult> Update(User user)
-    {
-        _context.Entry(user).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-        return Ok(user);
-    }
-
-    [HttpDelete]
-    public async Task<IActionResult> DeleteById(int id)
-    {
-        var user = await _context.Users.FindAsync(id);
+        var user = await _userRepository.AuthenticateAsync(request.Login, request.Password);
         if (user == null)
-            return NoContent();
-        _context.Remove(user);
-        await _context.SaveChangesAsync();
-        return Ok();
+            return Unauthorized("Invalid credentials");
+
+        var token = _jwtService.GenerateToken(user);
+        return Ok(new { Token = token });
     }
 }

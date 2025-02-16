@@ -1,58 +1,66 @@
-﻿using Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Model;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Repository;
+using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Controller;
 
-[Route("api/member")]
+[Route("api/member")][Route("api/member")]
 [ApiController]
-internal class MemberController : ControllerBase
+[Authorize]
+public class MemberController : ControllerBase
 {
-    private readonly GymContext _context;
-    public MemberController(GymContext context)
+    private readonly MemberRepository _memberRepository;
+
+    public MemberController(MemberRepository memberRepository)
     {
-        _context = context;
+        _memberRepository = memberRepository;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var users = await _context.Users.ToListAsync();
-        return Ok(users);
+        var members = await _memberRepository.GetAllAsync();
+        return Ok(members);
     }
 
-    [HttpGet("getById")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        return Ok(user);
+        var member = await _memberRepository.GetByIdAsync(id);
+        if (member == null)
+            return NotFound();
+        
+        return Ok(member);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(User user)
+    public async Task<IActionResult> Create(Member member)
     {
-        _context.Add(user);
-        await _context.SaveChangesAsync();
-        return Created("", user);
+        await _memberRepository.AddAsync(member);
+        return CreatedAtAction(nameof(GetById), new { id = member.Id }, member);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update(User user)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, Member member)
     {
-        _context.Entry(user).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-        return Ok(user);
+        if (id != member.Id)
+            return BadRequest("ID mismatch");
+
+        await _memberRepository.UpdateAsync(member);
+        return Ok(member);
     }
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        if (user == null)
-            return NoContent();
-        _context.Remove(user);
-        await _context.SaveChangesAsync();
-        return Ok();
+        var member = await _memberRepository.GetByIdAsync(id);
+        if (member == null)
+            return NotFound();
+
+        await _memberRepository.RemoveAsync(member);
+        return NoContent();
     }
 }

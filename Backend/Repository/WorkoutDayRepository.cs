@@ -5,7 +5,7 @@ using Interface;
 using Microsoft.EntityFrameworkCore;
 using Model;
 
-class WorkoutDayRepository : IRepository<WorkoutDay>
+public class WorkoutDayRepository : IRepository<WorkoutDay>
 {
     private readonly GymContext _context;
 

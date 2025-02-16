@@ -1,58 +1,66 @@
-﻿using Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Model;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Repository;
+using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Controller;
 
 [Route("api/split")]
 [ApiController]
-internal class SplitController : ControllerBase
+[Authorize]
+public class SplitController : ControllerBase
 {
-    private readonly GymContext _context;
-    public SplitController(GymContext context)
+    private readonly SplitRepository _splitRepository;
+
+    public SplitController(SplitRepository splitRepository)
     {
-        _context = context;
+        _splitRepository = splitRepository;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var users = await _context.Users.ToListAsync();
-        return Ok(users);
+        var splits = await _splitRepository.GetAllAsync();
+        return Ok(splits);
     }
 
-    [HttpGet("getById")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        return Ok(user);
+        var split = await _splitRepository.GetByIdAsync(id);
+        if (split == null)
+            return NotFound();
+        
+        return Ok(split);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(User user)
+    public async Task<IActionResult> Create(Split split)
     {
-        _context.Add(user);
-        await _context.SaveChangesAsync();
-        return Created("", user);
+        await _splitRepository.AddAsync(split);
+        return CreatedAtAction(nameof(GetById), new { id = split.Id }, split);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update(User user)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, Split split)
     {
-        _context.Entry(user).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-        return Ok(user);
+        if (id != split.Id)
+            return BadRequest("ID mismatch");
+
+        await _splitRepository.UpdateAsync(split);
+        return Ok(split);
     }
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        if (user == null)
-            return NoContent();
-        _context.Remove(user);
-        await _context.SaveChangesAsync();
-        return Ok();
+        var split = await _splitRepository.GetByIdAsync(id);
+        if (split == null)
+            return NotFound();
+
+        await _splitRepository.RemoveAsync(split);
+        return NoContent();
     }
 }

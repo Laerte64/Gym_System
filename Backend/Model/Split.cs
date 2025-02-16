@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Model;
 
 [Table("tb_split")]
-internal class Split
+public class Split
 {
     [Key]
     public int Id { get; set; } = 0;

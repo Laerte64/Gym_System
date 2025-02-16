@@ -5,7 +5,7 @@ using Interface;
 using Microsoft.EntityFrameworkCore;
 using Model;
 
-class EmployeeRepository : IRepository<Employee>
+public class EmployeeRepository : IRepository<Employee>
 {
     private readonly GymContext _context;
 

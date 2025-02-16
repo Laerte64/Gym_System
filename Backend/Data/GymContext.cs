@@ -3,7 +3,7 @@ using Model;
 
 namespace Data;
 
-internal class GymContext : DbContext
+public class GymContext : DbContext
 {
     public DbSet<User> Users { get; set; }
     public DbSet<Member> Members { get; set; }

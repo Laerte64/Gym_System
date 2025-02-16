@@ -5,7 +5,7 @@ using Interface;
 using Microsoft.EntityFrameworkCore;
 using Model;
 
-class UserRepository : Interface.IRepository<User>
+public class UserRepository : Interface.IRepository<User>
 {
     private readonly GymContext _context;
 
@@ -14,7 +14,7 @@ class UserRepository : Interface.IRepository<User>
         _context = context;
     }
 
-    public async Task<User?> UserLogin(string login, string password)
+    public async Task<User?> AuthenticateAsync(string login, string password)
     {
         return await _context.Users
             .FirstOrDefaultAsync(u => u.Login == login && u.Password == password);

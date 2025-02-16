@@ -1,58 +1,66 @@
-﻿using Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Model;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Repository;
+using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Controller;
 
 [Route("api/coach")]
 [ApiController]
-internal class CoachController : ControllerBase
+[Authorize] // Require authentication for all endpoints
+public class CoachController : ControllerBase
 {
-    private readonly GymContext _context;
-    public CoachController(GymContext context)
+    private readonly CoachRepository _coachRepository;
+
+    public CoachController(CoachRepository coachRepository)
     {
-        _context = context;
+        _coachRepository = coachRepository;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var users = await _context.Users.ToListAsync();
-        return Ok(users);
+        var coaches = await _coachRepository.GetAllAsync();
+        return Ok(coaches);
     }
 
-    [HttpGet("getById")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        return Ok(user);
+        var coach = await _coachRepository.GetByIdAsync(id);
+        if (coach == null)
+            return NotFound();
+        
+        return Ok(coach);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(User user)
+    public async Task<IActionResult> Create(Coach coach)
     {
-        _context.Add(user);
-        await _context.SaveChangesAsync();
-        return Created("", user);
+        await _coachRepository.AddAsync(coach);
+        return CreatedAtAction(nameof(GetById), new { id = coach.Id }, coach);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update(User user)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, Coach coach)
     {
-        _context.Entry(user).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-        return Ok(user);
+        if (id != coach.Id)
+            return BadRequest("ID mismatch");
+
+        await _coachRepository.UpdateAsync(coach);
+        return Ok(coach);
     }
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        if (user == null)
-            return NoContent();
-        _context.Remove(user);
-        await _context.SaveChangesAsync();
-        return Ok();
+        var coach = await _coachRepository.GetByIdAsync(id);
+        if (coach == null)
+            return NotFound();
+
+        await _coachRepository.RemoveAsync(coach);
+        return NoContent();
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Model;
 
 [Table("tb_workoutday")]
-internal class WorkoutDay
+public class WorkoutDay
 {
     [Key]
     public int Id { get; set; } = 0;
