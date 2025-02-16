@@ -7,10 +7,10 @@ namespace Controller;
 
 [Route("api/coach")]
 [ApiController]
-internal class UserController : ControllerBase
+internal class CoachController : ControllerBase
 {
     private readonly GymContext _context;
-    public UserController(GymContext context)
+    public CoachController(GymContext context)
     {
         _context = context;
     }

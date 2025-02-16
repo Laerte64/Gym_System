@@ -14,6 +14,4 @@ internal class Split
     public required string Name { get; set; }
 
     public required List<WorkoutDay> Days { get; set; }
-
-    public required bool Standart { get; set; }
 }

@@ -7,10 +7,10 @@ namespace Controller;
 
 [Route("api/split")]
 [ApiController]
-internal class UserController : ControllerBase
+internal class SplitController : ControllerBase
 {
     private readonly GymContext _context;
-    public UserController(GymContext context)
+    public SplitController(GymContext context)
     {
         _context = context;
     }

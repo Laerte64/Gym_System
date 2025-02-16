@@ -7,10 +7,10 @@ namespace Controller;
 
 [Route("api/workoutday")]
 [ApiController]
-internal class UserController : ControllerBase
+internal class WorkoutDayController : ControllerBase
 {
     private readonly GymContext _context;
-    public UserController(GymContext context)
+    public WorkoutDayController(GymContext context)
     {
         _context = context;
     }

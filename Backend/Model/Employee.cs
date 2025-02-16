@@ -5,6 +5,4 @@ namespace Model;
 [Table("tb_employee")]
 internal class Employee : User
 {
-    public required List<Payment> Payments { get; set; }
-    public required bool IsManager = false;
 }

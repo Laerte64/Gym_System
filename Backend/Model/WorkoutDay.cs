@@ -14,6 +14,4 @@ internal class WorkoutDay
     public required string Name { get; set; }
 
     public required List<Exercise> Exercises { get; set; }
-
-    public required bool Standart { get; set; }
 }
